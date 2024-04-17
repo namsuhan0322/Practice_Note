@@ -39,17 +39,20 @@ public class Move : MonoBehaviour
     public void Die()
     {
         gameObject.SetActive(false);
+
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        gameManager.RetryGame();
     }
 
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        // 피격판정
-        if (collision.gameObject.tag == "Enemy")
-        { 
-            Debug.Log("플레이어가 맞았습니다");
-            OnDamaged(collision.transform.position);
-        }
-    }
+    /* public void OnCollisionEnter2D(Collision2D collision)
+     {
+         // 피격판정
+         if (collision.gameObject.tag == "Enemy")
+         { 
+             Debug.Log("플레이어가 맞았습니다");
+             OnDamaged(collision.transform.position);
+         }
+     }
 
     void OnDamaged(Vector2 targetPos)
     {
