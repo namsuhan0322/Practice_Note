@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;                                              // Scene 이동 하기 위해서
 
 public class Score : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class Score : MonoBehaviour
         if (GameTime <= 0)                                                      // 0초가 되면
         {
             PlayerPrefs.SetInt("Coin", Point);                                 // 유니티에서 제공하는 저장 함수
+            SceneManager.LoadScene("MainScene");                                // MainScene으로 이동한다.
         }
 
         pointUI.text = "점수 : " + Point.ToString();                            // UI 점수 표시 
