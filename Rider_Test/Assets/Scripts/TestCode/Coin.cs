@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    public int coinValue = 10; // 코인이 주는 점수
+    public int Point = 10; // 코인이 주는 점수
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) // 충돌한 오브젝트가 플레이어인지 확인
         {
-            Score score = FindObjectOfType<Score>(); // Score 스크립트를 찾아서
-            if (score != null)
+            GameManager gameManager = FindObjectOfType<GameManager>();
+
+            if (gameManager != null)
             {
-                score.UpdatePoint(coinValue); // 점수를 증가시키는 함수 호출
+                gameManager.UpdatePoint(Point); // GameManager의 UpdatePoint 메서드를 호출하여 점수 증가
             }
 
             Destroy(gameObject); // 코인 파괴

@@ -9,20 +9,20 @@ public class Move : MonoBehaviour
     public float maxSpeed = 10.0f;
 
     // 피격시 색깔 변경
-    public SpriteRenderer spriteRenderer;
+    //public SpriteRenderer spriteRenderer;
 
     void Awake()
     {
         Application.targetFrameRate = 60;
 
         rigid = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void FixedUpdate()
     {
         // 플레이어 이동 간단 로직
-        float h = Input.GetAxisRaw("Horizontal");
+        /*float h = Input.GetAxisRaw("Horizontal");
         rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
 
         if (rigid.velocity.x > maxSpeed)
@@ -32,16 +32,34 @@ public class Move : MonoBehaviour
         else if (rigid.velocity.x < maxSpeed * (-1))
         {
             rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
-        }
+        }*/
 
+        if (Input.GetKey(KeyCode.Space))
+        {
+            rigid.AddForce(Vector2.right, ForceMode2D.Impulse);
+
+            if (rigid.velocity.x > maxSpeed)
+            {
+                rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
+            }
+            else if (rigid.velocity.x < maxSpeed * (-1))
+            {
+                rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
+            }
+        }
     }
 
     public void Die()
     {
         gameObject.SetActive(false);
 
+        // GameManager 스크립트를 불러와서
         GameManager gameManager = FindObjectOfType<GameManager>();
+        // RetryGame 함수를 실행
         gameManager.RetryGame();
+
+        // 죽었을시 화면이 멈춤
+        Time.timeScale = 0;
     }
 
     /* public void OnCollisionEnter2D(Collision2D collision)
