@@ -19,7 +19,7 @@ public class Move : MonoBehaviour
         //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         // 플레이어 이동 간단 로직
         /*float h = Input.GetAxisRaw("Horizontal");
