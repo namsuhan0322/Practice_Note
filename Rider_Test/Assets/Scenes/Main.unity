@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 99112963}
   - component: {fileID: 99112962}
   m_Layer: 5
-  m_Name: Point
+  m_Name: GameName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: GameName
 --- !u!222 &99112963
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -334,7 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfcc795732edb1a47926e9eff696e2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PointUI: {fileID: 99112962}
 --- !u!4 &679077142
 Transform:
   m_ObjectHideFlags: 0

@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;                      // UI 씬 매니팅을 하기위
 
 public class MainScene : MonoBehaviour
 {
-    public Text PointUI;                                // UI 변수 추가
+    //public Text PointUI;                                // UI 변수 추가
 
     void Start()
     {
-        PointUI.text = PlayerPrefs.GetInt("Point").ToString();      // 지정된 포인트 점수를 UI 표시
+        //PointUI.text = PlayerPrefs.GetInt("Point").ToString();      // 지정된 포인트 점수를 UI 표시
     }
 
     public void GoToGame()
