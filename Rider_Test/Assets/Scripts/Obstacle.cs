@@ -7,7 +7,7 @@ public class Obstacle : MonoBehaviour
 {
     Rigidbody2D rb;
     CircleCollider2D circleCollider2D;
-    public float fallDistanceThreshold = 5f; // 플레이어와 덫 사이의 거리 임계값
+    public float fallDistance = 5.5f; // 플레이어와 덫 사이의 거리 임계값
     bool isFalling = false;
 
     void Start()
@@ -26,7 +26,7 @@ public class Obstacle : MonoBehaviour
             if (player != null)
             {
                 float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-                if (distanceToPlayer <= fallDistanceThreshold)
+                if (distanceToPlayer <= fallDistance)
                 {
                     // 플레이어와 거리가 일정 값 이하일 때 덫이 떨어짐
                     rb.gravityScale = 5f; // 중력을 켜서 덫을 떨어뜨림

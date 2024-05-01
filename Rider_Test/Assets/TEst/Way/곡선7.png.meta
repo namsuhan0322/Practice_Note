@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -195,7 +195,7 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -2, y: 7}
+      - - {x: -2, y: 8}
         - {x: -8, y: -1}
         - {x: -8, y: -8}
         - {x: 8, y: -8}
@@ -334,8 +334,8 @@ TextureImporter:
       - - {x: 3, y: -8}
         - {x: 3, y: -8}
         - {x: 8, y: -8}
-        - {x: 8, y: -4}
-        - {x: 5, y: -6}
+        - {x: 8, y: -5}
+        - {x: 6, y: -6}
       tessellationDetail: 0
       bones: []
       spriteID: 433a733df4f26754b9a55b6f28d0c779
